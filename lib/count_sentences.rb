@@ -18,10 +18,10 @@ class String
     count = 0
     self.split(" ").each do |word|
       if word.end_with?(".", "?", "!")
-        count++ 
+        count += 1
       end
     end
-    puts count
+    count
   end
 
 end
