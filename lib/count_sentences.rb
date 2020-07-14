@@ -15,13 +15,13 @@ class String
   end
 
   def count_sentences
-    # self.split("!", "." , "!").delete("").count
-    # self.split("!" || "." || "!").count
-    #then remove empty elements
-    new_array = self.split("!" || "." || "!").delete_if(&:blank?)
-    return new_array.count
+    self.split(/\.|\!|\?/).delete_if { |object| object.length < 2}.count
 
-
+    # new_array = self.split(/\.|\!|\?/)
+    # new_array.delete_if do |object|
+    #   object.length < 2
+    # end
+    # return new_array.count
 
   end
 end
