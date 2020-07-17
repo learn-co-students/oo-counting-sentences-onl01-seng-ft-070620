@@ -1,3 +1,8 @@
+
+require 'pry'
+
+## REWORK
+
 ## 1. Create a #sentence? method that returns true
 ##    if the string ends in a period.
 ## 2. Create a #question? method that returns true
@@ -12,27 +17,22 @@
 ##     marks are present, ex: ...
 ##    -Count the number of elements in the array
 
-require 'pry'
-
 class String
 
   def sentence?
     self.end_with?(".")
-  end
+  end 
 
   def question?
     self.end_with?("?")
-  end
+  end 
 
   def exclamation?
     self.end_with?("!")
   end
 
+  def count_sentences 
+    self.split(/[.?!] /).length
+  end 
 
-  ## When either a "." or "?" or "!" is followed by
-  ## a space, split the string.
-  def count_sentences
-    self.split(/[.?!] /).count
-  end
-
-end
+end 
