@@ -3,18 +3,22 @@ require 'pry'
 class String
 
   def sentence?
-    
+    self.end_with?(".")
+
   end
 
   def question?
-
+    self.end_with?("?")
   end
 
   def exclamation?
-
+    self.end_with?("!")
   end
 
   def count_sentences
-
-  end
+    ##binding.pry
+ self.split(/\.|\?|\!/).delete_if {|sentence| sentence.length < 2}.count
+ 
+end
+  
 end
